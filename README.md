@@ -43,7 +43,7 @@ Login ssh with this data
 
 ![user](images/user.png)
 
-Use [CVE-2021-3156 PoC by blasty](https://github.com/blasty/CVE-2021-3156) for PrivEsc
+Use [CVE-2021-3156 PoC by blasty](https://github.com/blasty/CVE-2021-3156) or [Sudo 1.9.5p1 - 'Baron Samedit ' Heap-Based Buffer Overflow Privilege Escalation](https://www.exploit-db.com/exploits/49521) for PrivEsc
 
 ![httpserver](images/httpserver.png)
 
